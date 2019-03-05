@@ -83,6 +83,7 @@ The `spec` field is the actual GameServer specification and it is composed as fo
   - `name` is an optional descriptive name for a port
   - `portPolicy` has two options {{% feature expiryVersion="0.9.0" %}}`dynamic`{{% /feature %}}{{% feature publishVersion="0.9.0" %}}`Dynamic`{{% /feature %}} (default) the system allocates a free hostPort for the gameserver, for game clients to connect to.
       And {{% feature expiryVersion="0.9.0" %}}`static`{{% /feature %}}{{% feature publishVersion="0.9.0" %}}`Static`{{% /feature %}}, user defines the hostPort that the game client will connect to. Then onus is on the user to ensure that the port is available. When static is the policy specified, `hostPort` is required to be populated.
+  - `hostPort` the port exposed on the host for clients to connect to.
   - `containerPort` the port that is being opened on the game server process, this is a required field.
   - `protocol` the protocol being used. Defaults to UDP. TCP is the only other option.
 - `health` to track the overall healthy state of the GameServer, more information available in the [health check documentation]({{< relref "../Guides/health-checking.md" >}}).
